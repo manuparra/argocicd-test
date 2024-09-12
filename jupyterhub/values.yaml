@@ -1,3 +1,14 @@
+proxy:
+  secretToken: "c8a837e2d4400514f6abff16d1c79492dbce237714299b40624c90f97dccc0d4"
+  service:
+    type: ClusterIP 
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik  
+
+
 hub:
   baseUrl: /test-jhub
   db:
