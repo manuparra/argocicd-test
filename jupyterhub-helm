@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: jupyterhub-helm
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/manuparra/argocicd-test.git
+     path: jupyterhub
+     helm:
+       valuesFiles:
+         jupyterhub/values.yaml
+     
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: jupyter-hub-argocd
+syncPolicy:
+  syncOptions:
+  - CreateNamespace=true
