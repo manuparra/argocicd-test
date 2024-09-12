@@ -1,0 +1,35 @@
+hub:
+  baseUrl: /test-jhub
+  db:
+    pvc:
+      storageClassName: local-path
+
+singleuser:
+  memory:
+    limit: 1G
+    guarantee: 1G
+
+  cpu:
+    limit: .5
+    guarantee: .5
+
+  storage:
+    dynamic:
+      storageClass: local-path
+    capacity: 1Gi
+
+  # Defines the default image
+  defaultUrl: "/lab"
+  extraEnv:
+    JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
+  image:
+    name: jupyter/minimal-notebook
+    tag: latest
+  profileList:
+    - display_name: "Minimal environment"
+      description: "A Python environment."
+      default: true
+    - display_name: "Datascience environment"
+      description: "Python, R and Julia environments."
+      kubespawner_override:
+        image: jupyter/datascience-notebook:latest
