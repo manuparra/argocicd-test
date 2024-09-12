@@ -7,11 +7,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/manuparra/argocicd-test.git
+     chart:  jupyterhub-chart-srcnet-v01
      path: jupyterhub
      helm:
        valuesFiles:
-         jupyterhub/values.yaml
-     
+         jupyterhub/values.yaml     
   destination:
     server: "https://kubernetes.default.svc"
     namespace: jupyter-hub-argocd
