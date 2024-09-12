@@ -1,7 +1,8 @@
-proxy:
-  secretToken: "b8a837e2d4400514f6abff16d1c79492dbce237714299b40624c90f97dccc0d4"  
-  service:
-    type: ClusterIP  
+ingress:
+  enabled: true
+  hosts:
+    - notebook.spsrc.iaa.csic.es
+
     
 hub:
   baseUrl: /test-jhub
