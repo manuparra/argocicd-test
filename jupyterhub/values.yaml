@@ -1,9 +1,3 @@
-ingress:
-  enabled: true
-  hosts:
-    - notebook.spsrc.iaa.csic.es
-
-    
 hub:
   baseUrl: /test-jhub
   db:
